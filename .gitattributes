@@ -1,0 +1,7 @@
+# See https://github.com/github/linguist about the linguist attributes.
+
+# convert line endings, Pascal
+*.inc linguist-language=Pascal text eol=auto
+*.lpr linguist-language=Pascal text eol=auto
+*.dpr linguist-language=Pascal text eol=auto
+*.pas linguist-language=Pascal text eol=auto
