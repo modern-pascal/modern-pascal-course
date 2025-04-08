@@ -1,0 +1,28 @@
+object FormNotAutoCreated: TFormNotAutoCreated
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 480
+  ClientWidth = 640
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object Label1: TLabel
+    Position.X = 80.000000000000000000
+    Position.Y = 88.000000000000000000
+    Size.Width = 217.000000000000000000
+    Size.Height = 65.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Form Not Auto Created'
+    TabOrder = 0
+  end
+  object ButtonClose: TButton
+    Position.X = 80.000000000000000000
+    Position.Y = 192.000000000000000000
+    TabOrder = 1
+    Text = 'Close'
+    TextSettings.Trimming = None
+    OnClick = ButtonCloseClick
+  end
+end
