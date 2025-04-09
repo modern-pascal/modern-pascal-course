@@ -1,0 +1,33 @@
+object FrameUsingFrames: TFrameUsingFrames
+  Size.Width = 809.000000000000000000
+  Size.Height = 646.000000000000000000
+  Size.PlatformDefault = False
+  inline MyFrame1: TMyFrame
+    Position.X = 56.000000000000000000
+    Position.Y = 40.000000000000000000
+    Size.Width = 199.000000000000000000
+    Size.Height = 146.000000000000000000
+    Size.PlatformDefault = False
+  end
+  inline MyFrame2: TMyFrame
+    Position.X = 328.000000000000000000
+    Position.Y = 56.000000000000000000
+    Size.Width = 199.000000000000000000
+    Size.Height = 146.000000000000000000
+    Size.PlatformDefault = False
+  end
+  inline MyFrame3: TMyFrame
+    Position.X = 56.000000000000000000
+    Position.Y = 248.000000000000000000
+    Size.Width = 199.000000000000000000
+    Size.Height = 146.000000000000000000
+    Size.PlatformDefault = False
+  end
+  inline MyFrame4: TMyFrame
+    Position.X = 328.000000000000000000
+    Position.Y = 256.000000000000000000
+    Size.Width = 199.000000000000000000
+    Size.Height = 146.000000000000000000
+    Size.PlatformDefault = False
+  end
+end

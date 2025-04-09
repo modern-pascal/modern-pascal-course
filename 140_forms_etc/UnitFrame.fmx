@@ -1,0 +1,38 @@
+object MyFrame: TMyFrame
+  Size.Width = 199.000000000000000000
+  Size.Height = 146.000000000000000000
+  Size.PlatformDefault = False
+  object Panel1: TPanel
+    Align = Client
+    Size.Width = 199.000000000000000000
+    Size.Height = 146.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object Button1: TButton
+      Position.X = 16.000000000000000000
+      Position.Y = 72.000000000000000000
+      TabOrder = 2
+      Text = 'Button1'
+      TextSettings.Trimming = None
+    end
+    object Button2: TButton
+      Position.X = 16.000000000000000000
+      Position.Y = 104.000000000000000000
+      TabOrder = 3
+      Text = 'Button2'
+      TextSettings.Trimming = None
+    end
+    object CheckBox1: TCheckBox
+      Position.X = 16.000000000000000000
+      Position.Y = 40.000000000000000000
+      TabOrder = 0
+      Text = 'CheckBox1'
+    end
+    object Label1: TLabel
+      Position.X = 16.000000000000000000
+      Position.Y = 8.000000000000000000
+      Text = 'I'#39'm frame'
+      TabOrder = 4
+    end
+  end
+end

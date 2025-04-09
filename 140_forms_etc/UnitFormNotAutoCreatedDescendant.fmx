@@ -1,0 +1,17 @@
+inherited FormNotAutoCreatedDescendant: TFormNotAutoCreatedDescendant
+  Caption = 'FormNotAutoCreated1'
+  DesignerMasterStyle = 0
+  inherited Label1: TLabel
+    Position.X = 184.000000000000000000
+  end
+  object Button1: TButton
+    Position.X = 96.000000000000000000
+    Position.Y = 264.000000000000000000
+    Size.Width = 201.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 3
+    Text = 'New button in inherited'
+    TextSettings.Trimming = None
+  end
+end

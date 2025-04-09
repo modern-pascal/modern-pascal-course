@@ -11,7 +11,11 @@ type
   TFormAutoCreated = class(TForm)
     Label1: TLabel;
     ButtonClose: TButton;
+    Button1: TButton;
+    Button2: TButton;
     procedure ButtonCloseClick(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -23,7 +27,25 @@ var
 
 implementation
 
+uses UnitFormNotAutoCreated;
+
 {$R *.fmx}
+
+procedure TFormAutoCreated.Button1Click(Sender: TObject);
+var
+  MyNewForm: TFormAutoCreated;
+begin
+  MyNewForm := TFormAutoCreated.Create(Application);
+  MyNewForm.Show;
+end;
+
+procedure TFormAutoCreated.Button2Click(Sender: TObject);
+var
+  MyNewForm: TFormNotAutoCreated;
+begin
+  MyNewForm := TFormNotAutoCreated.Create(Application);
+  MyNewForm.Show;
+end;
 
 procedure TFormAutoCreated.ButtonCloseClick(Sender: TObject);
 begin

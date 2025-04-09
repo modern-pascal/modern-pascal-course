@@ -3,11 +3,13 @@ unit UnitDataModule1;
 interface
 
 uses
-  System.SysUtils, System.Classes, System.Bluetooth, System.Bluetooth.Components;
+  System.SysUtils, System.Classes, System.Bluetooth, System.Bluetooth.Components,
+  Creature;
 
 type
   TDataModule1 = class(TDataModule)
-    Bluetooth1: TBluetooth;
+    Werewolf: TCreature;
+    Vampyre: TCreature;
   private
     { Private declarations }
   public

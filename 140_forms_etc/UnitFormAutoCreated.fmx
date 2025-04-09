@@ -1,0 +1,47 @@
+object FormAutoCreated: TFormAutoCreated
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 480
+  ClientWidth = 640
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object Label1: TLabel
+    Position.X = 32.000000000000000000
+    Position.Y = 24.000000000000000000
+    Text = 'Form Auto-Created'
+    TabOrder = 1
+  end
+  object ButtonClose: TButton
+    Position.X = 32.000000000000000000
+    Position.Y = 64.000000000000000000
+    TabOrder = 2
+    Text = 'Close'
+    TextSettings.Trimming = None
+    OnClick = ButtonCloseClick
+  end
+  object Button1: TButton
+    Position.X = 32.000000000000000000
+    Position.Y = 112.000000000000000000
+    Size.Width = 193.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 3
+    Text = 'New Instance of AutoCreated'
+    TextSettings.Trimming = None
+    OnClick = Button1Click
+  end
+  object Button2: TButton
+    Position.X = 32.000000000000000000
+    Position.Y = 152.000000000000000000
+    Size.Width = 193.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 4
+    Text = 'New Instance of Not Auto Created'
+    TextSettings.Trimming = None
+    OnClick = Button2Click
+  end
+end

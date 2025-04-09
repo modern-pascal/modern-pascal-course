@@ -1,0 +1,25 @@
+object FormUsingFrames: TFormUsingFrames
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 780
+  ClientWidth = 1053
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  inline FrameUsingFrames1: TFrameUsingFrames
+    Position.X = 48.000000000000000000
+    Position.Y = 32.000000000000000000
+    Size.Width = 545.000000000000000000
+    Size.Height = 465.000000000000000000
+    Size.PlatformDefault = False
+  end
+  inline FrameUsingFrames2: TFrameUsingFrames
+    Position.X = 601.000000000000000000
+    Position.Y = 32.000000000000000000
+    Size.Width = 816.000000000000000000
+    Size.Height = 465.000000000000000000
+    Size.PlatformDefault = False
+  end
+end
