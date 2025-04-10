@@ -25,6 +25,15 @@ begin
   HitPoints := HitPoints - Weapon.Damage;
 end;
 
+(*
+// This would also be reasonable solution.
+// Class helpers are just syntactic sugar.
+procedure WeaponHurt(const C: TCreature; const Weapon: TWeapon);
+begin
+  C.HitPoints := C.HitPoints - Weapon.Damage;
+end;
+*)
+
 var
   Sword: TWeapon;
   Werewolf: TWerewolf;
