@@ -15,6 +15,6 @@ This repository contains the examples from the course.
 Slides from the course:
 
 - Day 1: https://castle-engine.io/bsc_pascal_1
-- Day 2: https://castle-engine.io/bsc_pascal_1
+- Day 2: https://castle-engine.io/bsc_pascal_2
 
 The slides will stay in Polish, though in the future we may prepare translated English version as well.
