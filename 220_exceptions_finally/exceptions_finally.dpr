@@ -40,12 +40,13 @@ begin
     raise; // reraise
   end;
   }
-
 end;
 
 var
   C: TCreature;
 begin
+  ReportMemoryLeaksOnShutdown := true;
+
   try
     C := CreatureFactory;
   except
