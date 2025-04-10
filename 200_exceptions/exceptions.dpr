@@ -16,6 +16,31 @@ type
     SenderCreature: TCreature;
   end;
 
+
+(*
+// Simplifying, this is Exception class:
+type
+  Exception = class(TObject)
+    property Message: String read .. .wrote ...;
+    constructor Create(const AMessage: String);
+    constructor CreateFmt(const AMessageFormat: String; const Args: array of const);
+  end;
+
+constructor Exception.Create(const AMessage: String);
+begin
+  Message := AMessage;
+end;
+
+// Simplifying, this is what Assert does
+// (only if $assertions on, otherwise don't even calculate Condition):
+procedure Assert(const Condition: Boolean; const Msg: String);
+begin
+  //
+  if not Condition then
+    raise EAssertionFailed.Create('Assertion failed' + Msg);
+end;
+*)
+
 { TCreature }
 
 procedure TCreature.LoadMyData;
@@ -24,6 +49,9 @@ var
 begin
   // simple
   //raise Exception.Create('Error Message');
+
+  // also possible with format string
+  //raise Exception.CreateFmt('Error Message with integer %d', [MyInt]);
 
   // own exception class with extra info
   E := ECreatureDataError.Create('Error in creature data file');
