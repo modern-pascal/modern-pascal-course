@@ -10,8 +10,12 @@ type
     FHitPoints: Integer;
     procedure SetHitPoints(const Value: Integer);
   public
+    const
+      DefaultHitPoints = 100;
     constructor Create;
-    property HitPoints: Integer read FHitPoints write SetHitPoints;
+  published
+    property HitPoints: Integer read FHitPoints write SetHitPoints
+      default DefaultHitPoints;
   end;
 
 { TCreature }
@@ -19,7 +23,7 @@ type
 constructor TCreature.Create;
 begin
   inherited;
-  FHitPoints := 100;
+  FHitPoints := DefaultHitPoints;
 end;
 
 procedure TCreature.SetHitPoints(const Value: Integer);
