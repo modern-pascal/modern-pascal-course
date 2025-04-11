@@ -6,29 +6,29 @@ uses SysUtils;
 
 type
   TCreature = class
-    // pola
+    // fields
     Name: String;
     HitPoints: Integer;
-    // metody
+    // methods
     constructor Create;
     function WillSurviveAttack(const Damage: Integer): Boolean;
     procedure ZawyjDoKsiezyca;
   end;
 
   TVampyre = class(TCreature)
-    // pola wampira
+    // fields
     FangsPoisonous: Boolean;
   end;
 
   TLocation = class
-    // pola
+    // fields
     Name: String; // ''
     Dangerous: Boolean; // false
     HasDragon: Boolean;
     Creature: TCreature; // nil
     I: Integer; // 0
     S: Single; // 0.0
-    // metody
+    // methods
     procedure Visit;
   end;
 

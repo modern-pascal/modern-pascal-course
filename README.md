@@ -22,6 +22,8 @@ The exceptions are
 
 TODO: Some of the examples contain Polish comments or identifiers. We should translate them to English.
 
+Note: Most of the examples show the correct, recommended way of doing something. They should work correctly and exhibit no memory leaks. The exceptions are examples marked with `DELIBERATELY_INCORRECT` in the directory name -- these are knowingly incorrect for some reason, to illustate something.
+
 Note: We chose to use FPC "Delphi mode" for these examples, to have the simplest code that compiles with both Delphi and FPC. An alternative would be to use FPC "ObjFpc mode", which in our opinion brings some benefits over "Delphi mode" (e.g. `@` for callbacks has more sane behavior), but also more incompatibilities with Delphi (which would need to be addressed by adding `{$ifdef FPC}` or `{$ifdef FPC_OBJFPC}` around the code).
 
 ## Slides

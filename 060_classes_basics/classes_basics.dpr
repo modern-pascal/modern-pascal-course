@@ -6,10 +6,10 @@ uses SysUtils;
 
 type
   TCreature = class
-    // pola
+    // fields
     Name: String;
     HitPoints: Integer;
-    // metody
+    // methods
     function WillSurviveAttack(AttackDamage: Integer): Boolean;
   end;
 
@@ -19,7 +19,7 @@ begin
 end;
 
 var
-  // Dwie instancje klasy TCreature
+  // 2 instances of class TCreature
   Werewolf: TCreature;
   Vampire: TCreature;
 begin
