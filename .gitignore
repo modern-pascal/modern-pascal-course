@@ -38,3 +38,16 @@ Win64/
 285_generic_vectors/generic_vectors
 287_generic_lists_usage/generic_lists
 xxx_advanced_records_initialize/adv_rec
+050_sample_game/Project1
+200_exceptions/exceptions
+210_exceptions_reraise/reraise
+220_exceptions_finally/exceptions_finally
+230_classes_inside/classes_inside
+235_class_helpers/class_helpers
+240_weak_ref/weak_ref
+250_weak_ref_trap/weak_ref_trap
+260_class_methods_etc/class_methods_etc
+290_generics_2d_grid/generics_2d_grid
+310_anonymous/anonymous
+300_callbacks_events/callbacks_events
+305_callbacks_assigning/func_callbacks

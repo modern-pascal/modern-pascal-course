@@ -2,8 +2,6 @@ program generics_2d_grid;
 
 {$ifdef MSWINDOWS} {$apptype CONSOLE} {$endif}
 
-{$R *.res}
-
 uses
   SysUtils,
   MyGrid2D in 'MyGrid2D.pas';

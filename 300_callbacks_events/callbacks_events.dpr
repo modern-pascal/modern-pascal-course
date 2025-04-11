@@ -2,8 +2,6 @@ program callbacks_events;
 
 {$ifdef MSWINDOWS} {$apptype CONSOLE} {$endif}
 
-{$R *.res}
-
 uses
   SysUtils;
 

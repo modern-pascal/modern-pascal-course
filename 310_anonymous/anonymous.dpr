@@ -1,4 +1,5 @@
-{ Example of Map, ForEach methods and processing list with anonymous functions. }
+{ Example of Map, ForEach methods and processing list with anonymous functions.
+  Adjusted from https://castle-engine.io/modern_pascal . }
 
 {$ifdef MSWINDOWS} {$apptype CONSOLE} {$endif}
 
@@ -10,7 +11,7 @@ type
   TIntMapProc =
     reference to procedure(const Index, Item: Integer);
 
-  TMyInts = class({$ifdef FPC}specialize{$endif} TList<Integer>)
+  TMyInts = class(TList<Integer>)
     { Change every item in the list using AFunc. }
     procedure Map(const AFunc: TIntMapFunc);
     { Call AProc for every item in the list. }
