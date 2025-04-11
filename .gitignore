@@ -1,3 +1,4 @@
+# artifacts by Delphi
 __history/
 __recovery/
 Win32/
@@ -5,5 +6,12 @@ Win64/
 *.local
 *.identcache
 *.res
-*.exe
 *.rsm
+
+# artifacts by FPC
+*.o
+
+# artifacts by any compiler
+*.exe
+# Unix binaries
+scoped_enums

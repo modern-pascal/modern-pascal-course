@@ -1,30 +1,31 @@
-{$APPTYPE CONSOLE}
+{ Demo of enums and scopedenums in Pascal. }
+
+{$ifdef MSWINDOWS} {$APPTYPE CONSOLE} {$endif}
+{$scopedenums on}
 
 uses SysUtils;
-
-{$scopedenums on}
 
 type
   TOS = (Linux, Windows, macOS, Android, iOS);
 
 var
-  MojUlubiony: TOS;
+  MyFavoriteOs: TOS;
 
-  WszystkieOSWgJakBardzoJeLubie: array of TOS;
+  OrderedOsILike: array of TOS;
   // always integer, from 0
 
-function CzyLubie(const OS: TOS): Boolean;
+function DoILike(const OS: TOS): Boolean;
 begin
-  Result := OS = MojUlubiony;
+  Result := OS = MyFavoriteOs;
 end;
 
-function JakBardzoLubie(const OS: TOS): Integer;
+function HowMuchDoILike(const OS: TOS): Integer;
 var
   I: Integer;
 begin
-  for I := 0 to Length(WszystkieOSWgJakBardzoJeLubie) - 1 do
+  for I := 0 to Length(OrderedOsILike) - 1 do
   begin
-    if WszystkieOSWgJakBardzoJeLubie[I] = OS then
+    if OrderedOsILike[I] = OS then
     begin
       Result := I;
       Break;
@@ -33,21 +34,21 @@ begin
 end;
 
 begin
-  SetLength(WszystkieOSWgJakBardzoJeLubie, 5);
-  Writeln('how many OS on the list? ', Length(WszystkieOSWgJakBardzoJeLubie));
+  SetLength(OrderedOsILike, 5);
+  Writeln('how many OS on the list? ', Length(OrderedOsILike));
 
   // Length(...) = 5
   // Low(...) = 0
   // High(...) = 4 = Length(...) - 1
-  WszystkieOSWgJakBardzoJeLubie[0] := TOS.Linux;
-  WszystkieOSWgJakBardzoJeLubie[1] := TOS.Linux;
-  WszystkieOSWgJakBardzoJeLubie[2] := TOS.Linux;
-  WszystkieOSWgJakBardzoJeLubie[3] := TOS.Windows;
-  WszystkieOSWgJakBardzoJeLubie[4] := TOS.Android;
+  OrderedOsILike[0] := TOS.Linux;
+  OrderedOsILike[1] := TOS.Linux;
+  OrderedOsILike[2] := TOS.Linux;
+  OrderedOsILike[3] := TOS.Windows;
+  OrderedOsILike[4] := TOS.Android;
 
-  MojUlubiony := TOS.Linux;
+  MyFavoriteOs := TOS.Linux;
 
-  Writeln('win? ',JakBardzoLubie(TOS.Windows));
-  Writeln('linux? ',JakBardzoLubie(TOS.Linux));
+  Writeln('Windows? ', HowMuchDoILike(TOS.Windows));
+  Writeln('Linux? ', HowMuchDoILike(TOS.Linux));
   Readln;
 end.
