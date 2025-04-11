@@ -1,6 +1,6 @@
 program classes_basics;
 
-{$APPTYPE CONSOLE}
+{$ifdef MSWINDOWS} {$apptype CONSOLE} {$endif}
 
 uses SysUtils;
 

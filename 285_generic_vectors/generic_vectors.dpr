@@ -1,6 +1,6 @@
 program generic_vectors;
 
-{$APPTYPE CONSOLE}
+{$ifdef MSWINDOWS} {$apptype CONSOLE} {$endif}
 
 type
   TVector3<T> = class

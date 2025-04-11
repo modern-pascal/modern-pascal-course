@@ -3,7 +3,7 @@ program memory_garbage_free;
 { THIS IS WRONG APPLICATION,
   ONLY TO SHOW THE PROBLEM WITH FREEING MEMORY GARBAGE. }
 
-{$APPTYPE CONSOLE}
+{$ifdef MSWINDOWS} {$apptype CONSOLE} {$endif}
 
 uses System.SysUtils, Generics.Collections;
 

@@ -1,4 +1,4 @@
-{$apptype CONSOLE}
+{$ifdef MSWINDOWS} {$apptype CONSOLE} {$endif}
 
 uses SysUtils, Generics.Collections;
 
@@ -31,7 +31,7 @@ var
   Werewolf: TCreature;
   Vampyre: TCreature;
 begin
-  ReportMemoryLeaksOnShutdown  := true;
+  {$ifndef FPC} ReportMemoryLeaksOnShutdown := true; {$endif}
   MyLocation := TLocation.Create;
   try
     Werewolf := TCreature.Create;

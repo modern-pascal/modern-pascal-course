@@ -1,6 +1,6 @@
 program callbacks_events;
 
-{$APPTYPE CONSOLE}
+{$ifdef MSWINDOWS} {$apptype CONSOLE} {$endif}
 
 {$R *.res}
 

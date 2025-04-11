@@ -1,6 +1,6 @@
 program classes_inside;
 
-{$APPTYPE CONSOLE}
+{$ifdef MSWINDOWS} {$apptype CONSOLE} {$endif}
 
 uses
   System.SysUtils;

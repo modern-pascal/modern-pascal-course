@@ -1,6 +1,6 @@
 program adv_rec;
 
-{$APPTYPE CONSOLE}
+{$ifdef MSWINDOWS} {$apptype CONSOLE} {$endif}
 
 type
   TVector3 = record

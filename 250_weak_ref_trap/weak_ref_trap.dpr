@@ -19,7 +19,7 @@ program weak_ref_trap;
   How to fix it?
  }
 
-{$APPTYPE CONSOLE}
+{$ifdef MSWINDOWS} {$apptype CONSOLE} {$endif}
 
 uses
   System.SysUtils,
@@ -168,7 +168,7 @@ begin
 end;
 
 begin
-  ReportMemoryLeaksOnShutdown := True;
+  {$ifndef FPC} ReportMemoryLeaksOnShutdown := true; {$endif}
 
   try
     ThisWorks;

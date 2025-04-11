@@ -1,6 +1,9 @@
+{ See https://en.wikipedia.org/wiki/Fibonacci_sequence .
+  This is naive (slow for large numbers) recursive implementation. }
+
 program functions_etc;
 
-{$APPTYPE CONSOLE}
+{$ifdef MSWINDOWS} {$apptype CONSOLE} {$endif}
 
 function Fibonacci(const N: Integer): Integer;
 begin

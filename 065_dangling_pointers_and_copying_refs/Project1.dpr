@@ -1,6 +1,6 @@
 program Project1;
 
-{$apptype CONSOLE}
+{$ifdef MSWINDOWS} {$apptype CONSOLE} {$endif}
 
 uses SysUtils;
 

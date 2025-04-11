@@ -1,6 +1,6 @@
 program weak_ref;
 
-{$APPTYPE CONSOLE}
+{$ifdef MSWINDOWS} {$apptype CONSOLE} {$endif}
 
 uses System.SysUtils, Classes;
 
@@ -74,7 +74,7 @@ var
   Werewolf: TCreature;
   Vampyre: TCreature;
 begin
-  ReportMemoryLeaksOnShutdown := True;
+  {$ifndef FPC} ReportMemoryLeaksOnShutdown := true; {$endif}
 
   try
     try

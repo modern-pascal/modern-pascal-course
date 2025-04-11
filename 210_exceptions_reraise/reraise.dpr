@@ -1,6 +1,6 @@
 program exceptions;
 
-{$APPTYPE CONSOLE}
+{$ifdef MSWINDOWS} {$apptype CONSOLE} {$endif}
 
 uses System.SysUtils, Generics.Collections;
 

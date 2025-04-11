@@ -1,6 +1,6 @@
 program generics_simple;
 
-{$APPTYPE CONSOLE}
+{$ifdef MSWINDOWS} {$apptype CONSOLE} {$endif}
 
 uses
   System.SysUtils,

@@ -2,7 +2,7 @@ program func_callbacks;
 
 uses SysUtils;
 
-{$APPTYPE CONSOLE}
+{$ifdef MSWINDOWS} {$apptype CONSOLE} {$endif}
 
 type
   TMyFunction = function(const X, Y: Integer): Integer;

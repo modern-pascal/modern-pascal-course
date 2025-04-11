@@ -1,6 +1,6 @@
 program exceptions_finally;
 
-{$APPTYPE CONSOLE}
+{$ifdef MSWINDOWS} {$apptype CONSOLE} {$endif}
 
 uses
   System.SysUtils;
@@ -45,7 +45,7 @@ end;
 var
   C: TCreature;
 begin
-  ReportMemoryLeaksOnShutdown := true;
+  {$ifndef FPC} ReportMemoryLeaksOnShutdown := true; {$endif}
 
   try
     C := CreatureFactory;

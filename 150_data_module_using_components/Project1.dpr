@@ -1,6 +1,6 @@
 program Project1;
 
-{$APPTYPE CONSOLE}
+{$ifdef MSWINDOWS} {$apptype CONSOLE} {$endif}
 
 {$R *.res}
 
@@ -10,7 +10,7 @@ uses
   Creature in 'component\Creature.pas';
 
 begin
-  ReportMemoryLeaksOnShutdown := true;
+  {$ifndef FPC} ReportMemoryLeaksOnShutdown := true; {$endif}
 
   DataModule1 := TDataModule1.Create(nil);
   try

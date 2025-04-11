@@ -1,6 +1,6 @@
 program class_helpers;
 
-{$APPTYPE CONSOLE}
+{$ifdef MSWINDOWS} {$apptype CONSOLE} {$endif}
 
 uses System.SysUtils, MyCreatures;
 

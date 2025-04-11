@@ -6,7 +6,7 @@ program Project1;
   I advise UTF-8 for all files (source code, data files) and proper conversions
   to whatever output expects. }
 
-{$APPTYPE CONSOLE}
+{$ifdef MSWINDOWS} {$apptype CONSOLE} {$endif}
 
 uses
   System.SysUtils;
@@ -24,14 +24,14 @@ begin
   Readln(C);
 
   case C of
-    't':Writeln('Przegra³eœ.');
+    't':Writeln('Przegraï¿½eï¿½.');
     'n':begin
-          Writeln('Uciek³eœ.');
+          Writeln('Uciekï¿½eï¿½.');
           Las;
         end;
     else
         begin
-          Writeln('Nieprawid³owa odpowiedŸ, jeszcze raz');
+          Writeln('Nieprawidï¿½owa odpowiedï¿½, jeszcze raz');
           Jaskinia;
         end;
   end;
@@ -41,9 +41,9 @@ procedure Las;
 var
   C: Char;
 begin
-  Writeln('Jesteœ w lesie');
-  Writeln('l - idê w lewo');
-  Writeln('p - idê w prawo');
+  Writeln('Jesteï¿½ w lesie');
+  Writeln('l - idï¿½ w lewo');
+  Writeln('p - idï¿½ w prawo');
 
   Readln(C);
 
@@ -52,7 +52,7 @@ begin
     'p': Jaskinia;
     else
         begin
-          Writeln('Nieprawid³owa odpowiedŸ, jeszcze raz');
+          Writeln('Nieprawidï¿½owa odpowiedï¿½, jeszcze raz');
           Las;
         end;
   end;
@@ -62,20 +62,20 @@ procedure Zamek;
 var
   C: Char;
 begin
-  Writeln('Jesteœ w zamku');
-  Writeln('w - wróc do lasu');
-  Writeln('z - zostañ');
+  Writeln('Jesteï¿½ w zamku');
+  Writeln('w - wrï¿½c do lasu');
+  Writeln('z - zostaï¿½');
 
   Readln(C);
 
   case C of
     'w':Las;
     'z':begin
-          Writeln('Pos³ubi³eœ ksiê¿niczkê!');
+          Writeln('Posï¿½ubiï¿½eï¿½ ksiï¿½niczkï¿½!');
         end;
     else
         begin
-          Writeln('Nieprawid³owa odpowiedŸ, jeszcze raz');
+          Writeln('Nieprawidï¿½owa odpowiedï¿½, jeszcze raz');
           Las;
         end;
   end;

@@ -2,7 +2,7 @@ program simple_properties_example;
 
 uses SysUtils;
 
-{$APPTYPE CONSOLE}
+{$ifdef MSWINDOWS} {$apptype CONSOLE} {$endif}
 
 type
   TCreature = class

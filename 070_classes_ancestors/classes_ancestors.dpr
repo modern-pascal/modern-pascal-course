@@ -1,4 +1,4 @@
-{$apptype CONSOLE}
+{$ifdef MSWINDOWS} {$apptype CONSOLE} {$endif}
 
 uses SysUtils;
 
@@ -48,7 +48,7 @@ var
   C: array [0..1] of TCreature;
   Player: TPlayer;
 begin
-  ReportMemoryLeaksOnShutdown := true;
+  {$ifndef FPC} ReportMemoryLeaksOnShutdown := true; {$endif}
 
   Vlad := TVampyre.Create;
   Vlad.Name := 'Vlad';

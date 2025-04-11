@@ -1,6 +1,6 @@
 { Example of Map, ForEach methods and processing list with anonymous functions. }
 
-{$apptype CONSOLE}
+{$ifdef MSWINDOWS} {$apptype CONSOLE} {$endif}
 
 uses SysUtils, Generics.Collections;
 

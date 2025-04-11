@@ -1,6 +1,6 @@
 program generic_lists;
 
-{$APPTYPE CONSOLE}
+{$ifdef MSWINDOWS} {$apptype CONSOLE} {$endif}
 
 uses SysUtils, Generics.Collections;
 

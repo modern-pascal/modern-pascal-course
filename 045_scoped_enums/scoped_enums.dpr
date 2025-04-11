@@ -1,6 +1,6 @@
 { Demo of enums and scopedenums in Pascal. }
 
-{$ifdef MSWINDOWS} {$APPTYPE CONSOLE} {$endif}
+{$ifdef MSWINDOWS} {$apptype CONSOLE} {$endif}
 {$scopedenums on}
 
 uses SysUtils;

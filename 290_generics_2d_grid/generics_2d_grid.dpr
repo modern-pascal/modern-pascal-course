@@ -1,6 +1,6 @@
 program generics_2d_grid;
 
-{$APPTYPE CONSOLE}
+{$ifdef MSWINDOWS} {$apptype CONSOLE} {$endif}
 
 {$R *.res}
 

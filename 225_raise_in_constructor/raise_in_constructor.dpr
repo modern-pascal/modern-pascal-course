@@ -1,6 +1,6 @@
 program raise_in_constructor;
 
-{$APPTYPE CONSOLE}
+{$ifdef MSWINDOWS} {$apptype CONSOLE} {$endif}
 
 uses
   SysUtils;

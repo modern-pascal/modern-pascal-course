@@ -1,6 +1,6 @@
 program game_classes;
 
-{$APPTYPE CONSOLE}
+{$ifdef MSWINDOWS} {$apptype CONSOLE} {$endif}
 
 uses SysUtils, Generics.Collections;
 
@@ -65,7 +65,7 @@ function TZamek.BeforeVisit: Boolean;
 begin
   Result := HasKey;
   if not Result then
-    Writeln('Nie masz klucza aby wejœæ do zamku!');
+    Writeln('Nie masz klucza aby wejï¿½ï¿½ do zamku!');
 end;
 
 procedure TZamek.CoreVisit;
@@ -74,21 +74,21 @@ var
 begin
   inherited;
 
-  Writeln('Jesteœ w zamku');
-  Writeln('w - wróc do lasu');
-  Writeln('z - zostañ');
+  Writeln('Jesteï¿½ w zamku');
+  Writeln('w - wrï¿½c do lasu');
+  Writeln('z - zostaï¿½');
 
   Readln(C);
 
   case C of
     'w':NewLocation := Las;
     'z':begin
-          Writeln('Pos³ubi³eœ ksiê¿niczkê!');
+          Writeln('Posï¿½ubiï¿½eï¿½ ksiï¿½niczkï¿½!');
           GameOver := true;
         end;
     else
         begin
-          Writeln('Nieprawid³owa odpowiedŸ, jeszcze raz');
+          Writeln('Nieprawidï¿½owa odpowiedï¿½, jeszcze raz');
           CoreVisit;
         end;
   end;
@@ -122,7 +122,7 @@ function TJaskinia.BeforeVisit: Boolean;
 begin
   if HasSmok then
   begin
-    Writeln('Smok jest w jaskinii, musisz go najpierw pokonaæ');
+    Writeln('Smok jest w jaskinii, musisz go najpierw pokonaï¿½');
     if Random(4) = 0 then
     begin
       HasSmok := false;
@@ -143,7 +143,7 @@ var
 begin
   inherited;
 
-  Writeln('Widzisz skrzyniê w jaskinii. Otwierasz (o), czy wychodzisz (w)?');
+  Writeln('Widzisz skrzyniï¿½ w jaskinii. Otwierasz (o), czy wychodzisz (w)?');
 
   Readln(C);
 
@@ -151,7 +151,7 @@ begin
     'o':begin
           if KeyInLocation then
           begin
-            Writeln('Zdoby³eœ klucz');
+            Writeln('Zdobyï¿½eï¿½ klucz');
             HasKey := true;
             KeyInLocation := false;
           end else
@@ -162,7 +162,7 @@ begin
         end;
     else
         begin
-          Writeln('Nieprawid³owa odpowiedŸ, jeszcze raz');
+          Writeln('Nieprawidï¿½owa odpowiedï¿½, jeszcze raz');
           CoreVisit;
         end;
   end;
@@ -179,9 +179,9 @@ procedure TLas.CoreVisit;
 var
   C: Char;
 begin
-  Writeln('Jesteœ w lesie');
-  Writeln('l - idê w lewo');
-  Writeln('p - idê w prawo');
+  Writeln('Jesteï¿½ w lesie');
+  Writeln('l - idï¿½ w lewo');
+  Writeln('p - idï¿½ w prawo');
 
   Readln(C);
 
@@ -190,14 +190,14 @@ begin
     'p': NewLocation := Jaskinia;
     else
         begin
-          Writeln('Nieprawid³owa odpowiedŸ, jeszcze raz');
+          Writeln('Nieprawidï¿½owa odpowiedï¿½, jeszcze raz');
           CoreVisit;
         end;
   end;
 end;
 
 begin
-  ReportMemoryLeaksOnShutdown := true;
+  {$ifndef FPC} ReportMemoryLeaksOnShutdown := true; {$endif}
   Randomize;
 
   AllLocations := TObjectList<TLocation>.Create(true);

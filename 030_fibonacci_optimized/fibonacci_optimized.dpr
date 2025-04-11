@@ -1,6 +1,9 @@
+{ Fast Fibonacci implementation (but using 32-bit numbers,
+  so will fail before 50th Fibonacci number). }
+
 program fibonacci_optimized;
 
-{$APPTYPE CONSOLE}
+{$ifdef MSWINDOWS} {$apptype CONSOLE} {$endif}
 
 var
   FiboValues: array [0..1000] of Integer;

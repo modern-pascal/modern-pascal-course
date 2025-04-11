@@ -1,8 +1,11 @@
+{ Fast Fibonacci implementation using 64-bit numbers,
+  and assertion to gracefully exit when 64-bit range is not enough. }
+
 program fibonacci_large;
 
 uses SysUtils;
 
-{$APPTYPE CONSOLE}
+{$ifdef MSWINDOWS} {$apptype CONSOLE} {$endif}
 {$assertions on}
 
 var

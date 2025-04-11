@@ -1,6 +1,6 @@
 program array_properties;
 
-{$APPTYPE CONSOLE}
+{$ifdef MSWINDOWS} {$apptype CONSOLE} {$endif}
 
 uses
   SysUtils, UnitCreature, UnitCreatureChild;
