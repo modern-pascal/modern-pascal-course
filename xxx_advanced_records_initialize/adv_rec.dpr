@@ -5,7 +5,7 @@ program adv_rec;
 type
   TVector3 = record
     function Len: Single;
-    class operator Initialize(out V: TVector3);
+    class operator Initialize(var V: TVector3);
     class operator Finalize(var V: TVector3);
     case Integer of
       0: (X, Y, Z: Single);
@@ -15,7 +15,7 @@ type
 var
   VectorsNum: Cardinal;
 
-class operator TVector3.Initialize(out V: TVector3);
+class operator TVector3.Initialize(var V: TVector3);
 begin
   Inc(VectorsNum);
   Writeln('TVector3.Initialize, now count: ', VectorsNum);
@@ -37,7 +37,11 @@ var
   V: TVector3;
   VA: array [0..9] of TVector3;
 begin
-
+  { We need to *use* the V and VA, otherwise optimizer (FPC 3.3.1)
+    could detect they are unused and not call TVector3.Initialize,
+    TVector3.Finalize. }
+  V.X := 1.23;
+  VA[0].X := 4.56;
 end;
 
 begin
