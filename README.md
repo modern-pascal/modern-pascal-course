@@ -14,7 +14,7 @@ This repository contains the examples from the course.
 
 - any operating system (we tested Windows and Linux).
 
-The exception is examples in `140_forms_etc` and `150_data_module_using_components`, which will work only with Delphi, as they depend on FMX / VCL.
+The exceptions are examples in `140_forms_etc` and `150_data_module_using_components`, which will compile only with Delphi, as they depend on FMX / VCL.
 
 TODO: Some of the examples contain Polish comments or identifiers. We should translate them to English.
 
