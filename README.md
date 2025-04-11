@@ -1,12 +1,16 @@
-# Examples for the BSC course about modern Object Pascal
+# Examples for the course about modern Object Pascal
 
-Course information: https://www.bsc.com.pl/szkolenie-nowoczesny-obiektowy-pascal/
+## BSC course information
 
-The course was done online on 2025-04-09 and 2025-04-10. If you're interested in attending the next edition or similar courses, let BSC know: https://www.bsc.com.pl/about/kontakt/ .
+These examples have been prepared to explain Pascal language features during the course organized by [BSC](https://www.bsc.com.pl/) and directed at Delphi developers.
+
+The course, and these examples, has been taught by _Michalis Kamburelis_, author of [Modern Object Pascal Introduction for Programmers](https://castle-engine.io/modern_pascal) and [Castle Game Engine](https://castle-engine.io/).
+
+[Course information is here](https://www.bsc.com.pl/szkolenie-nowoczesny-obiektowy-pascal/). It happened, online, on 2025-04-09 and 2025-04-10. If you're interested in attending the next edition or similar courses, [let BSC know](https://www.bsc.com.pl/about/kontakt/).
 
 ## Examples
 
-This repository contains the examples from the course.
+This repository contains the examples used during the course.
 
 **Compatibility**: Almost all the examples should compile with:
 
