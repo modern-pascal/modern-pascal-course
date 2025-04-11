@@ -1,88 +1,82 @@
 program Project1;
 
-{ Note: Encoding of this file is Windows 1250, to make the ouput "just work"
-  on Polish Windows.
-  This is just a demo for fun -- for serious development,
-  I advise UTF-8 for all files (source code, data files) and proper conversions
-  to whatever output expects. }
-
 {$ifdef MSWINDOWS} {$apptype CONSOLE} {$endif}
 
 uses
   SysUtils;
 
-procedure Jaskinia; forward;
-procedure Las; forward;
-procedure Zamek; forward;
+procedure Cave; forward;
+procedure Forest; forward;
+procedure Castle; forward;
 
-procedure Jaskinia;
+procedure Cave;
 var
   C: Char;
 begin
-  Writeln('Widzisz smoka. Walczysz?');
+  Writeln('You see a dragon. Do you fight? (y / n)');
 
   Readln(C);
 
   case C of
-    't':Writeln('Przegra�e�.');
+    'y':Writeln('You lost.');
     'n':begin
-          Writeln('Uciek�e�.');
-          Las;
+          Writeln('You ran away.');
+          Forest;
         end;
     else
         begin
-          Writeln('Nieprawid�owa odpowied�, jeszcze raz');
-          Jaskinia;
+          Writeln('Invalid response, try again');
+          Cave;
         end;
   end;
 end;
 
-procedure Las;
+procedure Forest;
 var
   C: Char;
 begin
-  Writeln('Jeste� w lesie');
-  Writeln('l - id� w lewo');
-  Writeln('p - id� w prawo');
+  Writeln('You are in the forest');
+  Writeln('l - go left');
+  Writeln('r - go right');
 
   Readln(C);
 
   case C of
-    'l': Zamek;
-    'p': Jaskinia;
+    'l': Castle;
+    'r': Cave;
     else
         begin
-          Writeln('Nieprawid�owa odpowied�, jeszcze raz');
-          Las;
+          Writeln('Invalid response, try again');
+          Forest;
         end;
   end;
 end;
 
-procedure Zamek;
+procedure Castle;
 var
   C: Char;
 begin
-  Writeln('Jeste� w zamku');
-  Writeln('w - wr�c do lasu');
-  Writeln('z - zosta�');
+  Writeln('You are in the castle');
+  Writeln('b - go back to the forest');
+  Writeln('s - stay');
 
   Readln(C);
 
   case C of
-    'w':Las;
-    'z':begin
-          Writeln('Pos�ubi�e� ksi�niczk�!');
+    'b':Forest;
+    's':begin
+          Writeln('You married the princess!');
         end;
     else
         begin
-          Writeln('Nieprawid�owa odpowied�, jeszcze raz');
-          Las;
+          Writeln('Invalid response, try again');
+          Forest;
         end;
   end;
 end;
 
 begin
-  Las;
-  Writeln('Koniec');
+  Forest;
+  Writeln('The End');
   Readln;
 end.
