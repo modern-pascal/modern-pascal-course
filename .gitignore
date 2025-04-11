@@ -10,11 +10,31 @@ Win64/
 
 # artifacts by FPC
 *.o
+*.ppu
 
 # artifacts by any compiler
 *.exe
 # Unix binaries
-scoped_enums
-fibonacci_large
-classes_freeing_component
-properties_setter_limits
+010_hello_world/Project1
+020_fibonacci_naive/functions_etc
+030_fibonacci_optimized/fibonacci_optimized
+040_fibonacci_large/fibonacci_large
+045_scoped_enums/scoped_enums
+060_classes_basics/classes_basics
+065_dangling_pointers_and_copying_refs/Project1
+070_classes_ancestors/classes_ancestors
+080_classes_freeing/classes_freeing
+090_classes_freeing_lists/80_classes_freeing_lists
+100_classes_freeing_component/classes_freeing_component
+110_game_classes/game_classes
+120_simple_properties_example/simple_properties_example
+125_properties_setter_limits/properties_setter_limits
+130_array_properties/array_properties
+135_modules_include_files/array_properties
+205_wrong_freeing_memory_garbage/memory_garbage_free
+225_raise_in_constructor/raise_in_constructor
+270_class_refs/class_refs
+280_generics_simple/generics_simple
+285_generic_vectors/generic_vectors
+287_generic_lists_usage/generic_lists
+xxx_advanced_records_initialize/adv_rec
