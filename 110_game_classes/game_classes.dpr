@@ -28,7 +28,7 @@ type
 var
   CurrentLocation: TLocation;
   NewLocation: TLocation;
-  Zamek, Las, Jaskinia: TLocation;
+  Castle, Forest, Cave: TLocation;
   AllLocations: TObjectList<TLocation>;
 
 constructor TLocation.Create;
@@ -53,59 +53,59 @@ begin
   Result := true;
 end;
 
-{ TZamek --------------------------------------------------------------------- }
+{ TCastle --------------------------------------------------------------------- }
 
 type
-  TZamek = class(TLocation)
+  TCastle = class(TLocation)
     function BeforeVisit: Boolean; override;
     procedure CoreVisit; override;
   end;
 
-function TZamek.BeforeVisit: Boolean;
+function TCastle.BeforeVisit: Boolean;
 begin
   Result := HasKey;
   if not Result then
-    Writeln('Nie masz klucza aby wej�� do zamku!');
+    Writeln('You don''t have the key to enter the castle!');
 end;
 
-procedure TZamek.CoreVisit;
+procedure TCastle.CoreVisit;
 var
   C: Char;
 begin
   inherited;
 
-  Writeln('Jeste� w zamku');
-  Writeln('w - wr�c do lasu');
-  Writeln('z - zosta�');
+  Writeln('You are in the castle');
+  Writeln('b - go back to the forest');
+  Writeln('s - stay');
 
   Readln(C);
 
   case C of
-    'w':NewLocation := Las;
-    'z':begin
-          Writeln('Pos�ubi�e� ksi�niczk�!');
+    'b': NewLocation := Forest;
+    's': begin
+          Writeln('You married the princess!');
           GameOver := true;
         end;
     else
         begin
-          Writeln('Nieprawid�owa odpowied�, jeszcze raz');
+          Writeln('Invalid response, try again');
           CoreVisit;
         end;
   end;
 end;
 
-{ TJaskinia --------------------------------------------------------------------- }
+{ TCave --------------------------------------------------------------------- }
 
 type
-  TJaskinia = class(TLocation)
-    HasSmok: Boolean;
+  TCave = class(TLocation)
+    HasDragon: Boolean;
     KeyInLocation: Boolean;
     constructor Create;
     function BeforeVisit: Boolean; override;
     procedure CoreVisit; override;
   end;
 
-constructor TJaskinia.Create;
+constructor TCave.Create;
 //var
 //  Smok: TCreature;
 begin
@@ -114,83 +114,83 @@ begin
 //  Smok.HitPoints := 100;
 //  Smok.Name := 'Smok';
 //  Creatures.Add(Smok);
-  HasSmok := true;
+  HasDragon := true;
   KeyInLocation := true;
 end;
 
-function TJaskinia.BeforeVisit: Boolean;
+function TCave.BeforeVisit: Boolean;
 begin
-  if HasSmok then
+  if HasDragon then
   begin
-    Writeln('Smok jest w jaskinii, musisz go najpierw pokona�');
+    Writeln('There is a dragon in the cave, you must defeat it first');
     if Random(4) = 0 then
     begin
-      HasSmok := false;
-      Writeln('Smok pokonany');
+      HasDragon := false;
+      Writeln('The dragon has been defeated');
       Result := true;
     end else
     begin
-      Writeln('Smok niepokonany, pozostaje w jaskinii, uciekasz');
+      Writeln('The dragon is undefeated, it remains in the cave, you flee');
       Result := false;
     end;
   end else
     Result := inherited;
 end;
 
-procedure TJaskinia.CoreVisit;
+procedure TCave.CoreVisit;
 var
   C: Char;
 begin
   inherited;
 
-  Writeln('Widzisz skrzyni� w jaskinii. Otwierasz (o), czy wychodzisz (w)?');
+  Writeln('You see a chest in the cave. Do you open it (o) or leave (l)?');
 
   Readln(C);
 
   case C of
-    'o':begin
+    'o': begin
           if KeyInLocation then
           begin
-            Writeln('Zdoby�e� klucz');
+            Writeln('You found the key');
             HasKey := true;
             KeyInLocation := false;
           end else
-            Writeln('Skrzynia jest pusta');
+            Writeln('The chest is empty');
         end;
-    'w':begin
-          NewLocation := Las;
+    'l': begin
+          NewLocation := Forest;
         end;
     else
         begin
-          Writeln('Nieprawid�owa odpowied�, jeszcze raz');
+          Writeln('Invalid response, try again');
           CoreVisit;
         end;
   end;
 end;
 
-{ TLas ---------------------------------------------------------------------- }
+{ TForest ---------------------------------------------------------------------- }
 
 type
-  TLas = class(TLocation)
+  TForest = class(TLocation)
     procedure CoreVisit; override;
   end;
 
-procedure TLas.CoreVisit;
+procedure TForest.CoreVisit;
 var
   C: Char;
 begin
-  Writeln('Jeste� w lesie');
-  Writeln('l - id� w lewo');
-  Writeln('p - id� w prawo');
+  Writeln('You are in the forest');
+  Writeln('l - go left');
+  Writeln('r - go right');
 
   Readln(C);
 
   case C of
-    'l': NewLocation := Zamek;
-    'p': NewLocation := Jaskinia;
+    'l': NewLocation := Castle;
+    'r': NewLocation := Cave;
     else
         begin
-          Writeln('Nieprawid�owa odpowied�, jeszcze raz');
+          Writeln('Invalid response, try again');
           CoreVisit;
         end;
   end;
@@ -202,16 +202,16 @@ begin
 
   AllLocations := TObjectList<TLocation>.Create(true);
 
-  Jaskinia := TJaskinia.Create;
-  AllLocations.Add(Jaskinia);
+  Cave := TCave.Create;
+  AllLocations.Add(Cave);
 
-  Las := TLas.Create;
-  AllLocations.Add(Las);
+  Forest := TForest.Create;
+  AllLocations.Add(Forest);
 
-  Zamek := TZamek.Create;
-  AllLocations.Add(Zamek);
+  Castle := TCastle.Create;
+  AllLocations.Add(Castle);
 
-  CurrentLocation := Las; // start
+  CurrentLocation := Forest; // start
 
   repeat
     if NewLocation <> nil then
