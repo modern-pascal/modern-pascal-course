@@ -2,7 +2,7 @@ program exceptions;
 
 {$ifdef MSWINDOWS} {$apptype CONSOLE} {$endif}
 
-uses System.SysUtils, Generics.Collections;
+uses SysUtils, Generics.Collections;
 
 type
   TCreature = class

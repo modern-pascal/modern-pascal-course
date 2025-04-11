@@ -2,7 +2,7 @@ program weak_ref;
 
 {$ifdef MSWINDOWS} {$apptype CONSOLE} {$endif}
 
-uses System.SysUtils, Classes;
+uses SysUtils, Classes;
 
 type
   TCreature = class(TComponent)

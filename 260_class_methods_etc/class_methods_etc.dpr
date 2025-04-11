@@ -3,7 +3,7 @@ program class_methods_etc;
 {$ifdef MSWINDOWS} {$apptype CONSOLE} {$endif}
 
 uses
-  System.SysUtils;
+  SysUtils;
 
 type
   TRocketTarget = (Moon, Mars, Sun);

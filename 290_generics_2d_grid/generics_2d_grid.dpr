@@ -5,7 +5,7 @@ program generics_2d_grid;
 {$R *.res}
 
 uses
-  System.SysUtils,
+  SysUtils,
   MyGrid2D in 'MyGrid2D.pas';
 
 type

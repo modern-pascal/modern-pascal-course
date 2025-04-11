@@ -22,7 +22,7 @@ program weak_ref_trap;
 {$ifdef MSWINDOWS} {$apptype CONSOLE} {$endif}
 
 uses
-  System.SysUtils,
+  SysUtils,
   Classes;
 
 type

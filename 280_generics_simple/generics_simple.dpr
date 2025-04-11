@@ -3,7 +3,7 @@ program generics_simple;
 {$ifdef MSWINDOWS} {$apptype CONSOLE} {$endif}
 
 uses
-  System.SysUtils,
+  SysUtils,
   MyStringList in 'MyStringList.pas';
 
 type

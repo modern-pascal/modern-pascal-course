@@ -5,7 +5,7 @@ program callbacks_events;
 {$R *.res}
 
 uses
-  System.SysUtils;
+  SysUtils;
 
 type
   TMyFunction = function (const X, Y: Integer): Integer;

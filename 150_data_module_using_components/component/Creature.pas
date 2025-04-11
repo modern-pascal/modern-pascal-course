@@ -3,7 +3,7 @@ unit Creature;
 interface
 
 uses
-  System.SysUtils, System.Classes;
+  SysUtils, System.Classes;
 
 type
   TCreature = class(TComponent)

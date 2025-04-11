@@ -9,7 +9,7 @@ program Project1;
 {$ifdef MSWINDOWS} {$apptype CONSOLE} {$endif}
 
 uses
-  System.SysUtils;
+  SysUtils;
 
 procedure Jaskinia; forward;
 procedure Las; forward;

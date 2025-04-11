@@ -2,7 +2,7 @@ program class_helpers;
 
 {$ifdef MSWINDOWS} {$apptype CONSOLE} {$endif}
 
-uses System.SysUtils, MyCreatures;
+uses SysUtils, MyCreatures;
 
 type
   TWeapon = class

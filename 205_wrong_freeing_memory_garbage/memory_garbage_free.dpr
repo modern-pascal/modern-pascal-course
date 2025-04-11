@@ -5,7 +5,7 @@ program memory_garbage_free;
 
 {$ifdef MSWINDOWS} {$apptype CONSOLE} {$endif}
 
-uses System.SysUtils, Generics.Collections;
+uses SysUtils, Generics.Collections;
 
 procedure Foo;
 var
