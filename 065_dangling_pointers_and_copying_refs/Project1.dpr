@@ -101,7 +101,6 @@ end;
 
 var
   WerewolfAdditionalReference, Werewolf: TCreature;
-  Vampyre: TCreature;
 begin
   // Werewolf.ZawyjDoKsiezyca; // would work, even when Werewolf = nil, but don't call things from nil
 
