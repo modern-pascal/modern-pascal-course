@@ -35,8 +35,8 @@ all-fpc331:
 		')'
 
 # Build with Delphi.
-.PHONY: all
-all:
+.PHONY: all-delphi
+all-delphi:
 	find . \
 		'(' -type f -iname *.dpr \
 				'(' -execdir $(DELPHI_COMMAND) {} ';' -o -quit ')' \
