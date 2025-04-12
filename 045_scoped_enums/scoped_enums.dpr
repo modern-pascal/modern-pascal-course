@@ -23,6 +23,7 @@ function HowMuchDoILike(const OS: TOS): Integer;
 var
   I: Integer;
 begin
+  Result := -1; // if OS not found in the list
   for I := 0 to Length(OrderedOsILike) - 1 do
   begin
     if OrderedOsILike[I] = OS then
