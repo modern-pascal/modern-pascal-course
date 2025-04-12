@@ -6,13 +6,13 @@
 # - https://docs.github.com/en/actions
 # ----------------------------------------------------------------------------
 
-name: Test Code Samples
+name: Build All
 
 on: [push, pull_request]
 
 jobs:
   test-fpc:
-    name: Test Code Samples with FPC stable
+    name: FPC stable
     runs-on: ubuntu-latest
     container: kambi/castle-engine-cloud-builds-tools:cge-none
     steps:
@@ -20,9 +20,22 @@ jobs:
     - run: make all
 
   test-fpc331:
-    name: Test Code Samples with FPC 3.3.1
+    name: FPC 3.3.1
     runs-on: ubuntu-latest
     container: kambi/castle-engine-cloud-builds-tools:cge-none-fpc331
     steps:
     - uses: actions/checkout@v4
     - run: make all-fpc331
+
+  delphi_test:
+    name: Delphi
+    strategy:
+      matrix:
+        host-label: [
+          delphi_12
+        ]
+    runs-on: ${{ matrix.host-label }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Delphi Build
+        run: make all-delphi
