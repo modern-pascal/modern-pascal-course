@@ -7,7 +7,6 @@ uses
 
 var
   Werewolf: TCreature;
-  I: Integer;
 begin
   Werewolf := TCreature.Create;
   try
