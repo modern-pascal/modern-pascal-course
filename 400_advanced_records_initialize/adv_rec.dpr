@@ -5,7 +5,7 @@ program adv_rec;
 type
   TVector3 = record
     function Len: Single;
-    class operator Initialize(var V: TVector3);
+    class operator Initialize({$ifdef FPC}var{$else}out{$endif} V: TVector3);
     class operator Finalize(var V: TVector3);
     case Integer of
       0: (X, Y, Z: Single);
@@ -15,7 +15,7 @@ type
 var
   VectorsNum: Cardinal;
 
-class operator TVector3.Initialize(var V: TVector3);
+class operator TVector3.Initialize({$ifdef FPC}var{$else}out{$endif} V: TVector3);
 begin
   Inc(VectorsNum);
   Writeln('TVector3.Initialize, now count: ', VectorsNum);
