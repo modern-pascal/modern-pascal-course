@@ -103,6 +103,7 @@ begin
     0: MyCreatureClass := TWerewolf;
     1: MyCreatureClass := TVampyre;
     2: MyCreatureClass := TRobot;
+    else raise Exception.Create('Should never happen, unexpected Random(3) result');
   end;
 
   Writeln('Creating a ', MyCreatureClass.ClassName, '...');
