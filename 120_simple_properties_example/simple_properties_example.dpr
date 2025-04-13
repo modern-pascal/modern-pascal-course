@@ -1,10 +1,11 @@
 program simple_properties_example;
 
-uses SysUtils;
-
 {$ifdef MSWINDOWS} {$apptype CONSOLE} {$endif}
 
+uses SysUtils;
+
 type
+  {$M+} // make it explicit that RTTI for TCreature should be generated
   TCreature = class
   strict private
     FHitPoints: Integer;
