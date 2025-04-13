@@ -18,7 +18,7 @@ type
   private
     function GetHasItems(const X, Y: Integer): Boolean;
     function GetItems(const X, Y: Integer): T;
-    procedure SetHasItems(const X, Y: Integer; const Value: Boolean);
+    //procedure SetHasItems(const X, Y: Integer; const Value: Boolean);
     procedure SetItems(const X, Y: Integer; const Value: T);
   public
     constructor Create(const AWidth, AHeight: Cardinal);
@@ -62,10 +62,11 @@ begin
   Result := FItems[X, Y].Value;
 end;
 
-procedure TGrid2D<T>.SetHasItems(const X, Y: Integer; const Value: Boolean);
-begin
-  FItems[X, Y].IsValue := false;
-end;
+// Unused -- better to set using ClearItem (to false) or during SetItems (to true).
+// procedure TGrid2D<T>.SetHasItems(const X, Y: Integer; const Value: Boolean);
+// begin
+//   FItems[X, Y].IsValue := false;
+// end;
 
 procedure TGrid2D<T>.SetItems(const X, Y: Integer; const Value: T);
 begin
