@@ -37,5 +37,7 @@ jobs:
     runs-on: ${{ matrix.host-label }}
     steps:
       - uses: actions/checkout@v4
-      - name: Delphi Build
-        run: make all-delphi
+      - name: Delphi Build (Win32)
+        run: make all-delphi-win32
+      - name: Delphi Build (Win64)
+        run: make all-delphi-win64
