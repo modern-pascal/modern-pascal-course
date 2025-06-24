@@ -1,4 +1,4 @@
-program array_properties;
+program modules_include_files;
 
 {$ifdef MSWINDOWS} {$apptype CONSOLE} {$endif}
 
